@@ -184,7 +184,7 @@
     font-weight: bold;
     margin-bottom: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
   }
   
   .help-btn:hover {
@@ -193,19 +193,20 @@
   
   .subheading {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1rem;
   }
   
   .main-heading {
     font-size: 2rem;
     font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 2rem;
   }
   
   .donate-btn {
-    display: inline-block;
+    /* display: inline-block; */
     border: 2px solid var(--primary-color);
     color: white;
     background:  var(--primary-color);
@@ -234,7 +235,7 @@
     }
   
     .help-btn {
-      font-size: 0.8rem;
+      font-size: 1.2rem;
     }
   
     .donate-btn {
@@ -253,7 +254,7 @@
     }
   
     .help-btn {
-      font-size: 0.7rem;
+      font-size: 1.2rem;
       padding: 0.4rem 0.8rem;
     }
   
