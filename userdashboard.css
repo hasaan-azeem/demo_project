@@ -1,0 +1,119 @@
+
+#dashboard{
+    margin-top: 8%;
+    margin-bottom: 12%;
+}
+
+#main-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+button.buttonn  {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #f68921;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+button:hover.buttonn {
+    background-color: teal;
+}
+
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    form input, form button {
+        width: 90%;
+    }
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .header,
+  body.dark-mode .footer {
+    background-color: #1e1e1e;
+  }
+  
+  body.dark-mode a {
+    color: #22a5ad;;
+  }
+  
+  body.dark-mode .donate-btn {
+    background-color:#22a5ad;;
+    color: #ffffff;
+  }
+  
+  body.darkmode .containerrr{
+  
+    background-color: #050101;
+    
+  }
+  
+  body.dark-mode .hero-content .help-btn,
+  body.dark-mode .hero-content .donate-btn {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .cause {
+    background-color: black;
+  }
+  
+  body.dark-mode .footer-bottom {
+    background-color: #1e1e1e;
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  

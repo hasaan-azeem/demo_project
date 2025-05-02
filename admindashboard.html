@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+   
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <div class="logo-section">
+            <a href="index.html"> <img src="images/logo.png" alt="AidBloom Logo" class="logo"></a>
+            <span class="site-name">AidBloom</span>
+          </div>
+          <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#aboutus">About Us</a></li>
+            <li>
+              <a href="index.html" class="register-btn">Logout</a>
+            </li>
+          </ul>
+          
+        </nav>
+      </header>
+    
+    <main class="dashboard">
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Donations</h3>
+                <p>$<span id="total-money">0</span></p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Resources</h3>
+                <p><span id="total-resources">0</span></p>
+            </div>
+        </section>
+        
+        <section class="resource-list">
+            <h3>Recent Donations</h3>
+            <input type="text" id="search" class="search-bar" placeholder="Search donations...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Donor Name</th>
+                        <th>Resource</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="donation-list">
+                    <!-- Data will be inserted dynamically -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="containor">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="images/logo.png" alt="AidBloom Logo" class="footer-logo-img">
+              <span class="footer-site-name">AidBloom</span>
+            </div>
+      
+            <div class="footer-links">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-contact">
+              <p>Contact Us:</p>
+              <a href="mailto:info@aidbloom.com" class="footer-email">info@aidbloom.com</a>
+            </div>
+          </div>
+      
+          <div class="footer-bottom">
+            <p>&copy; 2025 AidBloom. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+    
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  
+      <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+        document.getElementById("search").addEventListener("input", function() {
+            const searchQuery = this.value;
+            const fuse = new Fuse(donations, { keys: ["donor", "resource"] });
+            const results = fuse.search(searchQuery);
+            renderDonations(results.map(result => result.item));
+        });
+    </script>
+</body>
+</html>

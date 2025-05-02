@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="userdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  
+    <header class="header">
+        <nav class="navbar">
+          <div class="logo-section">
+            <img src="images\logo.png" alt="AidBloom Logo" class="logo">
+            <span class="site-name">AidBloom</span>
+          </div>
+          <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+          <ul class="nav-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#home.html">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li>
+              <a href="index.html" class="register-btn">Logout</a>
+            </li>
+          </ul>
+         
+        </nav>
+      </header>
+    <div id="main-container">
+        <!-- Dashboard -->
+        <div id="dashboard" class="page active">
+            <h2>Welcome, <span id="user-name">John Doe</span></h2>
+            <button onclick="viewReports()"    class="buttonn">View Donation History</button>
+            <button onclick="makeDonation()" class="buttonn">Make New Donation</button>
+
+            <!-- Donation History Section -->
+            <div id="user-reports" class="hidden">
+                <h3>Your Donation History:</h3>
+                <ul id="donation-list">
+                    <!-- Donation list will be dynamically filled here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Donation Form -->
+        <div id="donation-form-container" class="page hidden">
+            <h2>Make a New Donation</h2>
+            <form id="donation-form">
+                <input type="number" placeholder="Amount" id="donation-amount" required>
+                <button type="submit">Donate</button>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="containor">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="images/logo.png" alt="AidBloom Logo" class="footer-logo-img">
+              <span class="footer-site-name">AidBloom</span>
+            </div>
+      
+            <div class="footer-links">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-contact">
+              <p>Contact Us:</p>
+              <a href="mailto:info@aidbloom.com" class="footer-email">info@aidbloom.com</a>
+            </div>
+          </div>
+      
+          <div class="footer-bottom">
+            <p>&copy; 2025 AidBloom. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script >// Sample user data (this would be typically fetched from a server)
+        let userData = {
+            name: 'John Doe',
+            donations: [50, 100, 200]
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display the user name in the dashboard
+            document.getElementById('user-name').innerText = userData.name;
+        
+            // View donation history
+            document.querySelector('button[onclick="viewReports()"]').addEventListener('click', function() {
+                viewReports();
+            });
+        
+            // Make a new donation
+            document.getElementById('donation-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const amount = document.getElementById('donation-amount').value;
+                if (amount) {
+                    userData.donations.push(parseInt(amount));
+                    alert('Donation successful!');
+                    switchPage('dashboard');
+                    updateDonationList();
+                } else {
+                    alert('Please enter a valid donation amount.');
+                }
+            });
+        });
+        
+        // Switch between pages (Dashboard / Donation Form / Donation History)
+        function switchPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+        
+        // View the donation history
+        function viewReports() {
+            const reportSection = document.getElementById('user-reports');
+            const donationList = document.getElementById('donation-list');
+            
+            donationList.innerHTML = ''; // Clear previous donations
+            userData.donations.forEach(donation => {
+                const listItem = document.createElement('li');
+                listItem.innerText = `$${donation}`;
+                donationList.appendChild(listItem);
+            });
+            
+            reportSection.classList.toggle('hidden');
+        }
+        
+        // Update donation history list (on donation or page load)
+        function updateDonationList() {
+            const donationList = document.getElementById('donation-list');
+            donationList.innerHTML = ''; // Clear previous list
+            userData.donations.forEach(donation => {
+                const listItem = document.createElement('li');
+                listItem.innerText = `$${donation}`;
+                donationList.appendChild(listItem);
+            });
+        }
+        </script>
+</body>
+</html>

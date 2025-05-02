@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AidBloom</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+         
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo-section">
+        <a href="index.html"><img src="images/logo.png" alt="AidBloom Logo" class="logo"></a>
+        <span class="site-name">AidBloom</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="registration.html" class="register-btn">Registration/Sign up</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- HERO AREA -->
+  
+
+  <section class="hero"  id="hero" loading="lazy">
+    <div class="hero-content">
+     <a href="login.html"> <button class="help-btn">Donate</button></a>
+      <p class="subheading">To make the workd better place for everyone</p>
+      <h1 class="main-heading">TOGETHER WE CAN MAKE A DIFFERENCE</h1>
+      <a href="registration.html" class="donate-btn">To Donate Register Now </a>
+    </div>
+  </section>
+
+
+
+ <!-- 2nd section -->
+
+<section class="hope-section">
+    <div class="container">
+      <!-- Left Abstract Background Section -->
+      <div class="abstract-background"></div>
+      
+      <!-- Right Text Section -->
+      <div class="text-container">
+        <p class="intro-text">Welcome To AidBloom</p>
+        <h1 class="main-heading">You’re the Hope of Others.</h1>
+        <p class="description">
+          Donation is the act of giving with a generous heart, creating a ripple of positive change in the lives of others. It’s more than just a contribution—it’s a statement of compassion and a step towards building a better world. Every donation, big or small, holds the power to provide hope, restore dignity, and empower communities in need. Together, through giving, we can make a meaningful difference and spread kindness where it’s needed most.
+        </p>
+        <button class="donate-btn">Be the part of this great cause!</button>
+      
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-causes">
+    <div class="donate-container">
+      <div class="cause">
+        <div class="icon-container">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h2 class="cause-title">Help Fight Hunger</h2>
+        <p class="cause-description">
+          Your donation helps provide food to families in need, ensuring that no one goes hungry to bed.
+        </p>
+      </div>
+  
+      <div class="cause">
+        <div class="icon-container">
+          <i class="fas fa-ambulance"></i>
+        </div>
+        <h2 class="cause-title">Support Medical Aid</h2>
+        <p class="cause-description">
+          Contributions support medical treatments and emergency care for those in critical conditions.
+        </p>
+      </div>
+  
+      <div class="cause">
+        <div class="icon-container">
+          <i class="fa-solid fa-child"></i>
+        </div>
+        <h2 class="cause-title">Empower Children</h2>
+        <p class="cause-description">
+          Donations ensure children receive education, shelter, and a bright future ahead.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="about-us" id="aboutus">
+    <div class="about-container">
+      <div class="about-text">
+        <h1 class="about-title">Who We Are</h1>
+        <p class="about-description">
+          We are a dedicated charity-focused Team, committed to making a positive impact on communities in need in Pakistan. Our mission is to connect people willing to give with those who need it most, making it easier than ever to contribute and make a difference. We believe in transparency, trust, and the power of collective action to create real change.
+        </p>
+        <p class="about-values">
+          We value integrity, compassion, and collaboration in everything we do. Join us in spreading hope and making the world a better place for everyone.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/hero4.jpeg" alt="Charity Volunteers" class="about-img">
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section>
+    <div class="leaderboard-container">
+      <h2>🏆 Top Donors</h2>
+      <table class="leaderboard">
+          <thead>
+              <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Donation Amount ($)</th>
+              </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+              <!-- Donor list will be dynamically added here -->
+          </tbody>
+      </table>
+  </div>
+  </section>
+
+<section  id="faq">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+        <button class="faq-question">1. What is this website about? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">This website is a platform for making donations and viewing reports.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">2. How do I make a donation? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">You can make a donation by clicking the "Make New Donation" button in the dashboard.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">3. Is my donation secure? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">Yes, we use encryption to ensure all transactions are secure.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">4. Can I view my past donations? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">Yes, you can view your donation history in the "View Reports" section.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">5. What payment methods do you accept? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">We accept credit/debit cards, PayPal, and bank transfers.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">6. Can I cancel my donation? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">No, donations are final and cannot be canceled.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">7. Do I get a receipt for my donation? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">Yes, you will receive an email receipt after donating.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">8. How do I contact support? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">You can contact us via email or our support chat.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">9. Is there a minimum donation amount? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">Yes, the minimum donation amount is $5.</div>
+    </div>
+
+    <div class="faq">
+        <button class="faq-question">10. How is my donation used? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer">Your donation is used to support various charitable causes and initiatives.</div>
+    </div>
+
+</div>
+</section>
+
+<section>
+  <div class="feedback-container">
+    <h2>We Want To Hear From You</h2>
+    <form id="feedback-form">
+        <div class="form-group">
+            <label for="name">NAME</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">EMAIL <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="Your Email ID" required>
+        </div>
+
+        <div class="form-group">
+            <label for="subject">SUBJECT</label>
+            <input type="text" id="subject" placeholder="Subject">
+        </div>
+
+        <div class="form-group">
+            <label for="message">MESSAGE <span class="required">*</span></label>
+            <textarea id="message" placeholder="Type your message here" required></textarea>
+        </div>
+
+        <button type="submit"  class="submitt"  style="  width: 30%;">Submit</button>
+    </form>
+</div>
+</section>
+
+
+
+
+  <section class="contact-section"  id="contact">
+    <div class="containor">
+      <div class="contact-info">
+        <h2 class="contact-title">Want to Donate? Contact Us!</h2>
+        <p class="contact-description">
+          If you're interested in making a donation, feel free to reach out to us via email. We’d love to hear from you and discuss how you can contribute to our cause.
+        </p>
+        <a href="mailto:donate@charityapp.com" class="contact-email">donate@charityapp.com</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="containor">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="AidBloom Logo" class="footer-logo-img">
+          <span class="footer-site-name">AidBloom</span>
+        </div>
+  
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-contact">
+          <p>Contact Us:</p>
+          <a href="mailto:info@aidbloom.com" class="footer-email">info@aidbloom.com</a>
+        </div>
+      </div>
+  
+      <div class="footer-bottom">
+        <p>&copy; 2025 AidBloom. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  
+  
+  
+  <!-- Link to FontAwesome for icons (you can remove if already included in your project) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
