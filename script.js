@@ -1,9 +1,19 @@
-const toggleBtn = document.querySelector(".menu-toggle");
-  const navList = document.querySelector(".nav-list");
+const toggleBtn = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
+  const navLinks = document.querySelectorAll('.nav-list a');
 
-  toggleBtn.addEventListener("click", () => {
-    navList.classList.toggle("active");
-    toggleBtn.classList.toggle("open");
+  // Toggle menu open/close
+  toggleBtn.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    toggleBtn.classList.toggle('open');
+  });
+
+  // Close menu on nav link click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('active');
+      toggleBtn.classList.remove('open');
+    });
   });
 
   const toggleDarkMode = () => {
