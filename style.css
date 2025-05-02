@@ -1011,10 +1011,6 @@ tr:nth-child(3) td {
       margin-right: 5%; /* Add margin on the right for balance */
       margin-top: 5%; /* Add margin on the top for balance */
       padding: 15px;    /* Adjust padding for smaller screens */
-      display: flex;    /* Use flexbox to center content */
-    flex-direction: column; /* Stack content vertically */
-    align-items: center;    /* Center the content horizontally */
-    justify-content: center; /* Center content vertically */
     }
   
     h2 {
