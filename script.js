@@ -1,18 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
+const toggleBtn = document.querySelector(".menu-toggle");
   const navList = document.querySelector(".nav-list");
 
-  menuToggle.addEventListener("click", () => {
-    navList.classList.toggle("active"); // Toggle the active class
+  toggleBtn.addEventListener("click", () => {
+    navList.classList.toggle("active");
+    toggleBtn.classList.toggle("open");
   });
-
-  const navLinks = document.querySelectorAll(".nav-list a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      navList.classList.remove("active"); // Remove the active class when a link is clicked
-    });
-  });
-});
 
   const toggleDarkMode = () => {
     document.body.classList.toggle('dark-mode');
