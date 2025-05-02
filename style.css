@@ -188,7 +188,7 @@
   }
   
   .help-btn:hover {
-    background: var(--hover-color);
+    background: var(--button-color);
   }
   
   .subheading {
