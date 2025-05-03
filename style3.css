@@ -86,62 +86,59 @@
   }
 
 
-  /* Animation definitions */
-  @keyframes slideFromLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-50px) scale(0.95);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
-  }
-
-  @keyframes slideFromRight {
-    0% {
-      opacity: 0;
-      transform: translateX(50px) scale(0.95);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
-  }
-
-  @keyframes fadeUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  /* Add animation classes */
-  .animate-slide-left {
-    animation: slideFromLeft 0.8s ease-out forwards;
+  /* Slower animations */
+@keyframes slideFromLeft {
+  0% {
     opacity: 0;
+    transform: translateX(-50px) scale(0.95);
   }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
 
-  .animate-slide-right {
-    animation: slideFromRight 0.8s ease-out forwards;
+@keyframes slideFromRight {
+  0% {
     opacity: 0;
+    transform: translateX(50px) scale(0.95);
   }
-
-  /* Mobile and larger screens */
-  @media (min-width: 640px) {
-
-    .animate-slide-left,
-    .animate-slide-right {
-      animation: fadeUp 0.8s ease-out forwards;
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Apply only when in-view is added */
+.animate-slide-left,
+.animate-slide-right,
+.animate-fade-up {
+  opacity: 0;
+}
+
+.in-view.animate-slide-left {
+  animation: slideFromLeft 1.5s ease-out forwards;
+}
+
+.in-view.animate-slide-right {
+  animation: slideFromRight 1.5s ease-out forwards;
+}
+
+.in-view.animate-fade-up {
+  animation: fadeUp 1.5s ease-out forwards;
+}
+
 
 
   /* How We Help Section */

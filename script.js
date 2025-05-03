@@ -16,6 +16,7 @@ const toggleBtn = document.querySelector('.menu-toggle');
     });
   });
 
+
   const toggleDarkMode = () => {
     document.body.classList.toggle('dark-mode');
     // Save the user's preference in local storage
