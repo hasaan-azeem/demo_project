@@ -39,6 +39,7 @@
   }
 
   .donation-card {
+    height: 100%;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -46,6 +47,10 @@
     width: 30%;
     text-align: center;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .donation-card:hover {
@@ -87,57 +92,60 @@
 
 
   /* Slower animations */
-@keyframes slideFromLeft {
-  0% {
+  @keyframes slideFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes slideFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Apply only when in-view is added */
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-fade-up {
     opacity: 0;
-    transform: translateX(-50px) scale(0.95);
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
+
+  .in-view.animate-slide-left {
+    animation: slideFromLeft 1.5s ease-out forwards;
   }
-}
 
-@keyframes slideFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px) scale(0.95);
+  .in-view.animate-slide-right {
+    animation: slideFromRight 1.5s ease-out forwards;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
+
+  .in-view.animate-fade-up {
+    animation: fadeUp 1.5s ease-out forwards;
   }
-}
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Apply only when in-view is added */
-.animate-slide-left,
-.animate-slide-right,
-.animate-fade-up {
-  opacity: 0;
-}
-
-.in-view.animate-slide-left {
-  animation: slideFromLeft 1.5s ease-out forwards;
-}
-
-.in-view.animate-slide-right {
-  animation: slideFromRight 1.5s ease-out forwards;
-}
-
-.in-view.animate-fade-up {
-  animation: fadeUp 1.5s ease-out forwards;
-}
 
 
 
